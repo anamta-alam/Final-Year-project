@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Math 9 and 10 Theorems Explorer</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page-shell">
+    <nav class="topbar">
+      <a class="brand" href="#top">
+        <span class="brand-mark">M</span>
+        <span>
+          <strong>MathVision FYP</strong>
+          <small>Interactive Theorem Learning</small>
+        </span>
+      </a>
+      <div class="topbar-links">
+        <a href="#home">Home</a>
+        <a href="#project-overview">About</a>
+        <a href="#theorem-viewer">Theorems</a>
+        <a href="#how-to-use">How To Use</a>
+      </div>
+    </nav>
+
+    <header class="hero" id="home">
+      <div class="hero-copy">
+        <p class="eyebrow">Interactive Mathematics 9 And 10</p>
+        <h1>
+          <span class="hero-kicker">FYP Interactive Learning Platform</span>
+          Class 9 and 10 theorems with animated diagrams
+        </h1>
+        <p class="hero-text">
+          Learn mathematics theorems visually, logically, and step by step. Explore Class 9 and Class 10
+          chapter-wise with animated diagrams, proof flow, construction guidance, and clear student-friendly explanation.
+        </p>
+        <div class="hero-actions">
+          <a class="primary-btn" href="#theorem-viewer">Open Theorem Viewer</a>
+          <button class="ghost-btn" id="playAllBtn" type="button">Play Current Theorem</button>
+        </div>
+
+        <div class="class-tabs" id="classTabs">
+          <button class="class-tab active" type="button" data-class="9">Class 9</button>
+          <button class="class-tab" type="button" data-class="10">Class 10</button>
+        </div>
+
+        <div class="chapter-cards" id="chapterCards"></div>
+
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <strong>2</strong>
+            <span>Classes</span>
+          </div>
+          <div class="hero-stat">
+            <strong>4</strong>
+            <span>Chapters</span>
+          </div>
+          <div class="hero-stat">
+            <strong>19+</strong>
+            <span>Theorems</span>
+          </div>
+          <div class="hero-stat">
+            <strong>Step-by-step</strong>
+            <span>Interactive learning</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="project-overview" id="project-overview">
+      <article class="info-card">
+        <p class="guide-label">Project Purpose</p>
+        <h2>Turning textbook theorems into visual learning</h2>
+        <p>
+          This project is designed to help students understand geometry and circle theorems through movement,
+          sequence, and simple reasoning instead of only memorizing textbook proofs.
+        </p>
+      </article>
+
+      <article class="info-card">
+        <p class="guide-label">Problem Statement</p>
+        <p>
+          Many students find theorems difficult because book proofs are static and use mathematical words that
+          feel hard to understand. This platform breaks each theorem into guided steps, easier words, and
+          animated diagrams.
+        </p>
+      </article>
+
+      <article class="info-card">
+        <p class="guide-label">Learning Features</p>
+        <ul class="info-list">
+          <li>Chapter-wise theorem organization for Class 9 and Class 10</li>
+          <li>Animated SVG diagrams with highlighted proof steps</li>
+          <li>Student-friendly explanation and easy word meanings</li>
+          <li>Given, To Prove, Construction, and Final Result sections</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="how-to-use" id="how-to-use">
+      <div class="info-card wide">
+        <p class="guide-label">How To Use</p>
+        <div class="how-grid">
+          <div>
+            <h3>1. Choose a class</h3>
+            <p>Start with Class 9 or Class 10 according to your syllabus.</p>
+          </div>
+          <div>
+            <h3>2. Select a chapter</h3>
+            <p>Use the chapter cards to focus on one topic at a time.</p>
+          </div>
+          <div>
+            <h3>3. Open a theorem</h3>
+            <p>Read the theorem statement, purpose, and construction summary.</p>
+          </div>
+          <div>
+            <h3>4. Learn step by step</h3>
+            <p>Use Next Step or Auto Play to follow the diagram animation and logic.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <main class="content-grid">
+      <aside class="sidebar">
+        <div class="sidebar-head">
+          <p class="eyebrow" id="sidebarLabel">Class 9 Theorems</p>
+          <h2>Select a theorem</h2>
+        </div>
+        <div class="theorem-list" id="theoremList"></div>
+      </aside>
+
+      <section class="viewer" id="theorem-viewer">
+        <div class="viewer-top">
+          <div>
+            <p class="eyebrow" id="topicLabel">Chapter 12</p>
+            <h2 id="theoremTitle">Loading theorem...</h2>
+            <p id="theoremStatement" class="statement"></p>
+
+            <div class="progress-wrap">
+              <div class="progress-meta">
+                <span id="progressLabel">Learning progress</span>
+                <span id="stepCounter">Step 1 / 1</span>
+              </div>
+              <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="viewer-badges">
+            <span class="badge" id="theoremTag">Geometry</span>
+            <span class="badge soft" id="theoremNumber">Theorem</span>
+          </div>
+        </div>
+
+        <section class="overview-grid">
+          <div class="summary-card">
+            <p class="guide-label">Purpose</p>
+            <p id="purposeText"></p>
+          </div>
+          <div class="summary-card">
+            <p class="guide-label">Given</p>
+            <p id="givenText"></p>
+          </div>
+          <div class="summary-card">
+            <p class="guide-label">To Prove</p>
+            <p id="proveText"></p>
+          </div>
+          <div class="summary-card">
+            <p class="guide-label">Construction</p>
+            <p id="constructionText"></p>
+          </div>
+        </section>
+
+        <div class="stage">
+          <div class="diagram-panel">
+            <svg id="theoremSvg" viewBox="0 0 600 360" aria-label="Interactive theorem diagram"></svg>
+          </div>
+
+          <div class="guide-panel">
+            <div class="guide-box active">
+              <p class="guide-label">Given / Construction</p>
+              <p id="guideIntro"></p>
+            </div>
+
+            <div class="guide-box current-step">
+              <p class="guide-label">Current Step</p>
+              <h3 id="stepTitle"></h3>
+              <p id="stepText"></p>
+            </div>
+
+            <div class="controls">
+              <button type="button" id="prevBtn">Previous</button>
+              <button type="button" id="nextBtn">Next Step</button>
+              <button type="button" id="autoBtn">Auto Play</button>
+            </div>
+          </div>
+        </div>
+
+        <section class="proof-panel">
+          <div class="proof-card">
+            <p class="guide-label">Detailed Understanding</p>
+            <ul id="conceptExplain" class="content-list"></ul>
+
+            <div class="term-box">
+              <p class="term-heading">Easy Word Meanings</p>
+              <ul id="termList" class="term-list"></ul>
+            </div>
+          </div>
+
+          <div class="proof-card">
+            <p class="guide-label">Proof Idea</p>
+            <ul id="proofHint" class="content-list"></ul>
+          </div>
+
+          <div class="proof-card">
+            <p class="guide-label">Exam / Student Note</p>
+            <ul id="studentTip" class="content-list"></ul>
+          </div>
+
+          <div class="proof-card">
+            <p class="guide-label">How to Remember</p>
+            <ul id="memoryTip" class="content-list"></ul>
+          </div>
+        </section>
+
+        <section class="result-strip">
+          <div class="result-card">
+            <p class="guide-label">Final Result</p>
+            <h3 id="resultTitle"></h3>
+            <p id="resultText"></p>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div>
+
+        <p>This interactive website is built for school students to understand theorems visually and logically.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#home">Back to top</a>
+        <a href="#theorem-viewer">Open theorem viewer</a>
+      </div>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
